@@ -1,0 +1,102 @@
+[
+    {
+        "id": "duan2024diffretouch",
+        "title": "DiffRetouch: Using Diffusion to Retouch on the Shoulder of Experts",
+        "authors": ["Zheng-Peng Duan", "Zheng Lin", "Xin Jin", "Dongqing Zou", "Chunle Guo", "Chongyi Li"],
+        "abstract": "Image retouching aims to enhance the visual quality of photos. Considering the different aesthetic preferences of users, the target of retouching is subjective. However, current retouching methods mostly adopt deterministic models, which not only neglects the style diversity in the expert-retouched results and tends to learn an average style during training, but also lacks sample diversity during inference. In this paper, we propose a diffusion-based method, named DiffRetouch. Thanks to the excellent distribution modeling ability of diffusion, our method can capture the complex fine-retouched distribution covering various visual-pleasing styles in the training data. Moreover, four image attributes are made adjustable to provide a user-friendly editing mechanism. By adjusting these attributes in specified ranges, users are allowed to customize preferred styles within the learned fine-retouched distribution. Additionally, the affine bilateral grid and contrastive learning scheme are introduced to handle the problem of texture distortion and control insensitivity respectively. Extensive experiments have demonstrated the superior performance of our method on visually appealing and sample diversity. The code will be made available to the community.",
+        "url": "https://arxiv.org/abs/2407.03757",
+        "tags": ["Diffusion", "Retouching"],
+        "homepage": "https://adam-duan.github.io/projects/retouch/",
+        "published": "AAAI 2024"
+    },
+    {
+        "id": "duan2025dit4sr",
+        "title": "DiT4SR: Taming Diffusion Transformer for Real-World Image Super-Resolution",
+        "authors": ["Zheng-Peng Duan", "Jiawei Zhang", "Xin Jin", "Ziheng Zhang", "Zheng Xiong", "Dongqing Zou", "Jimmy Ren", "Chunle Guo", "Chongyi Li"],
+        "abstract": "Large-scale pre-trained diffusion models are becoming increasingly popular in solving the Real-World Image Super-Resolution (Real-ISR) problem because of their rich generative priors. The recent development of diffusion transformer (DiT) has witnessed overwhelming performance over the traditional UNet-based architecture in image generation, which also raises the question: Can we adopt the advanced DiT-based diffusion model for Real-ISR? To this end, we propose our DiT4SR, one of the pioneering works to tame the large-scale DiT model for Real-ISR. Instead of directly injecting embeddings extracted from low-resolution (LR) images like ControlNet, we integrate the LR embeddings into the original attention mechanism of DiT, allowing for the bidirectional flow of information between the LR latent and the generated latent. The sufficient interaction of these two streams allows the LR stream to evolve with the diffusion process, producing progressively refined guidance that better aligns with the generated latent at each diffusion step. Additionally, the LR guidance is injected into the generated latent via a cross-stream convolution layer, compensating for DiT's limited ability to capture local information. These simple but effective designs endow the DiT model with superior performance in Real-ISR, which is demonstrated by extensive experiments.",
+        "url": "https://arxiv.org/abs/2503.23580",
+        "tags": ["Diffusion", "Super-Resolution"],
+        "homepage": "https://adam-duan.github.io/projects/dit4sr/",
+        "published": "Arxiv Preprint"
+    },
+    {
+        "id": "guo2022novel",
+        "title": "A Novel Low-light Image Enhancement Algorithm Based On Information Assistance",
+        "authors": ["Jiacen Guo", "Xin Jin", "Weilin Chen", "Chao Wang"],
+        "abstract": "Low-light image enhancement plays a significant role in image processing and analysis. Nevertheless, most current algorithms are suffering from the problem of color distortion. With the assistance of an image captured in normal illumination as a reference, the matter of color distortion can be effectively settled by means of the color transfer method. The enhanced images in our proposed algorithm are much closer to the color distribution of the original objects under normal illumination. Our proposed algorithm takes a low-light image and a reference image with a different viewpoint or similar scene as input. Two images are both divided into regions by FCM (Fuzzy C-means). Accordingly, they are then transferred into HSV color space, and the optimal matched results would be obtained by minimizing the weighted distance of the H and S channels. Eventually, the original image would be significantly enhanced using our improved color transfer algorithm. Therefore, this novel low-light image enhancement algorithm based on information assistance expands the application of color transfer in the field of low-light image enhancement. In conclusion, the proposed algorithm has made superior achievements in image contrast retention, color consistency, and naturalness preservation, which would be promising in broad application scenarios.",
+        "url": "https://ieeexplore.ieee.org/document/9956275",
+        "tags": ["Low-light Image Enhancement"],
+        "homepage": "https://srameo.github.io/bibtex/guo2022novel.html",
+        "published": "ICPR 2022"
+    },
+    {
+        "id": "guo2023underwater",
+        "title": "Underwater Ranker: Learn Which Is Better and How to Be Better",
+        "authors": ["Chunle Guo", "Ruiqi Wu", "Xin Jin", "Linghao Han", "Zhi Chai", "Weidong Zhang", "Chongyi Li"],
+        "abstract": "In this paper, we present a ranking-based underwater image quality assessment (UIQA) method, abbreviated as URanker. The URanker is built on the efficient conv-attentional image Transformer. In terms of underwater images, we specially devise (1) the histogram prior that embeds the color distribution of an underwater image as histogram token to attend global degradation and (2) the dynamic cross-scale correspondence to model local degradation. The final prediction depends on the class tokens from different scales, which comprehensively considers multi-scale dependencies. With the margin ranking loss, our URanker can accurately rank the order of underwater images of the same scene enhanced by different underwater image enhancement (UIE) algorithms according to their visual quality. To achieve that, we also contribute a dataset, URankerSet, containing sufficient results enhanced by different UIE algorithms and the corresponding perceptual rankings, to train our URanker. Apart from the good performance of URanker, we found that a simple U-shape UIE network can obtain promising performance when it is coupled with our pre-trained URanker as additional supervision. In addition, we also propose a normalization tail that can significantly improve the performance of UIE networks. Extensive experiments demonstrate the state-of-the-art performance of our method. The key designs of our method are discussed.",
+        "url": "https://arxiv.org/abs/2208.06857",
+        "tags": ["Underwater"],
+        "homepage": "https://li-chongyi.github.io/URanker_files/",
+        "published": "AAAI 2023"
+    },
+    {
+        "id": "jin2023dnf",
+        "title": "DNF: Decouple and Feedback Network for Seeing in the Dark",
+        "authors": ["Xin Jin", "Linghao Han", "Zhen Li", "Zhi Chai", "Chunle Guo", "Chongyi Li"],
+        "abstract": "The exclusive properties of RAW data have shown great potential for low-light image enhancement. Nevertheless, the performance is bottlenecked by the inherent limitations of existing architectures in both single-stage and multi-stage methods. Mixed mapping across two different domains, noise-to-clean and RAW-to-sRGB, misleads the single-stage methods due to the domain ambiguity. The multi-stage methods propagate the information merely through the resulting image of each stage, neglecting the abundant features in the lossy image-level dataflow. In this paper, we probe a generalized solution to these bottlenecks and propose a Decouple aNd Feedback framework, abbreviated as DNF. To mitigate the domain ambiguity, domain-specific subtasks are decoupled, along with fully utilizing the unique properties in RAW and sRGB domains. The feature propagation across stages with a feedback mechanism avoids the information loss caused by image-level dataflow. The two key insights of our method resolve the inherent limitations of RAW data-based low-light image enhancement satisfactorily, empowering our method to outperform the previous state-of-the-art method by a large margin with only 19% parameters, achieving 0.97dB and 1.30dB PSNR improvements on the Sony and Fuji subsets of SID.",
+        "url": "https://ieeexplore.ieee.org/document/10204662",
+        "tags": ["Camera", "ISP"],
+        "homepage": "https://github.com/Srameo/DNF",
+        "published": "CVPR 2023"
+    },
+    {
+        "id": "jin2023lighting",
+        "title": "Lighting Every Darkness in Two Pairs: A Calibration-Free Pipeline for RAW Denoising",
+        "authors": ["Xin Jin", "Jia-Wen Xiao", "Linghao Han", "Chunle Guo", "Ruixun Zhang", "Xialei Liu", "Chongyi Li"],
+        "abstract": "Calibration-based methods have dominated RAW image denoising under extremely low-light environments. However, these methods suffer from several main deficiencies: 1) the calibration procedure is laborious and time-consuming, 2) denoisers for different cameras are difficult to transfer, and 3) the discrepancy between synthetic noise and real noise is enlarged by high digital gain. To overcome the above shortcomings, we propose a calibration-free pipeline for Lighting Every Drakness (LED), regardless of the digital gain or camera sensor. Instead of calibrating the noise parameters and training repeatedly, our method could adapt to a target camera only with few-shot paired data and fine-tuning. In addition, well-designed structural modification during both stages alleviates the domain gap between synthetic and real noise without any extra computational cost. With 2 pairs for each additional digital gain (in total 6 pairs) and 0.5% iterations, our method achieves superior performance over other calibration-based methods.",
+        "url": "https://arxiv.org/abs/2308.03448v1",
+        "tags": ["Camera", "ISP"],
+        "homepage": "https://srameo.github.io/projects/led-iccv23/",
+        "published": "ICCV 2023"
+    },
+    {
+        "id": "jin2023make",
+        "title": "Make Explict Calibration Implicit: \"Calibrate\" Denoiser Instead of The Noise Model",
+        "authors": ["Xin Jin", "Jia-Wen Xiao", "Linghao Han", "Chunle Guo", "Xialei Liu", "Chongyi Li", "Ming-Ming Cheng"],
+        "abstract": "Explicit calibration-based methods have dominated RAW image denoising under extremely low-light environments. However, these methods are impeded by several critical limitations: a) the explicit calibration process is both labor- and time-intensive, b) challenge exists in transferring denoisers across different camera models, and c) the disparity between synthetic and real noise is exacerbated by digital gain. To address these issues, we introduce a groundbreaking pipeline named Lighting Every Darkness (LED), which is effective regardless of the digital gain or the camera sensor. LED eliminates the need for explicit noise model calibration, instead utilizing an implicit fine-tuning process that allows quick deployment and requires minimal data. Structural modifications are also included to reduce the discrepancy between synthetic and real noise without extra computational demands. Our method surpasses existing methods in various camera models, including new ones not in public datasets, with just a few pairs per digital gain and only 0.5% of the typical iterations. Furthermore, LED also allows researchers to focus more on deep learning advancements while still utilizing sensor engineering benefits.",
+        "url": "https://arxiv.org/abs/2308.03448v1",
+        "tags": ["Camera", "ISP"],
+        "homepage": "https://srameo.github.io/projects/led-extension/",
+        "published": "Arxiv Preprint"
+    },
+    {
+        "id": "jin2024le3d",
+        "title": "Lighting Every Darkness with 3DGS: Fast Training and Real-Time Rendering for HDR View Synthesis",
+        "authors": ["Xin Jin", "Pengyi Jiao", "Zheng-Peng Duan", "Xingchao Yang", "Chun-Le Guo", "Bo Ren", "Chong-Yi Li"],
+        "abstract": "Volumetric rendering based methods, like NeRF, excel in HDR view synthesis from RAWimages, especially for nighttime scenes. While, they suffer from long training times and cannot perform real-time rendering due to dense sampling requirements. The advent of 3D Gaussian Splatting (3DGS) enables real-time rendering and faster training. However, implementing RAW image-based view synthesis directly using 3DGS is challenging due to its inherent drawbacks: 1) in nighttime scenes, extremely low SNR leads to poor structure-from-motion (SfM) estimation in distant views; 2) the limited representation capacity of spherical harmonics (SH) function is unsuitable for RAW linear color space; and 3) inaccurate scene structure hampers downstream tasks such as refocusing. To address these issues, we propose LE3D (Lighting Every darkness with 3DGS). Our method proposes Cone Scatter Initialization to enrich the estimation of SfM, and replaces SH with a Color MLP to represent the RAW linear color space. Additionally, we introduce depth distortion and near-far regularizations to improve the accuracy of scene structure for downstream tasks. These designs enable LE3D to perform real-time novel view synthesis, HDR rendering, refocusing, and tone-mapping changes. Compared to previous volumetric rendering based methods, LE3D reduces training time to 1% and improves rendering speed by up to 4,000 times for 2K resolution images in terms of FPS.",
+        "url": "https://arxiv.org/abs/2411.15678",
+        "tags": ["Camera", "3D Reconstruction", "ISP", "HDR"],
+        "homepage": "https://srameo.github.io/projects/le3d/",
+        "published": "NeurIPS 2024"
+    },
+    {
+        "id": "jin2025classic",
+        "title": "Classic Video Denoising in a Machine Learning World: Robust, Fast, and Controllable",
+        "authors": ["Xin Jin", "Simon Niklaus", "Zhoutong Zhang", "Zhihao Xia", "Chunle Guo", "Yuting Yang", "Jiawen Chen", "Chong-Yi Li"],
+        "abstract": "Denoising is a crucial step in many video processing pipelines such as in interactive editing, where high quality, speed, and user control are essential. While recent approaches achieve significant improvements in denoising quality by leveraging deep learning, they are prone to unexpected failures due to discrepancies between training data distributions and the wide variety of noise patterns found in real-world videos. These methods also tend to be slow and lack user control. In contrast, traditional denoising methods perform reliably on in-the-wild videos and run relatively quickly on modern hardware. However, they require manually tuning parameters for each input video, which is not only tedious but also requires skill. We bridge the gap between these two paradigms by proposing a differentiable denoising pipeline based on traditional methods. A neural network is then trained to predict the optimal denoising parameters for each specific input, resulting in a robust and efficient approach that also supports user control.",
+        "url": "https://arxiv.org/abs/2504.03136",
+        "tags": ["Camera", "Video Denoising"],
+        "homepage": "https://srameo.github.io/projects/levd/",
+        "published": "CVPR 2025"
+    },
+    {
+        "id": "li2024towards",
+        "title": "Towards RAW Object Detection in Diverse Conditions",
+        "authors": ["Zhong-Yu Li", "Xin Jin", "Boyuan Sun", "Chun-Le Guo", "Ming-Ming Cheng"],
+        "abstract": "Existing object detection methods often consider sRGB input, which was compressed from RAW data using ISP originally designed for visualization. However, such compression might lose crucial information for detection, especially under complex light and weather conditions. We introduce the AODRaw dataset, which offers 7,785 high-resolution real RAW images with 135,601 annotated instances spanning 62 categories, capturing a broad range of indoor and outdoor scenes under 9 distinct light and weather conditions. Based on AODRaw that supports RAW and sRGB object detection, we provide a comprehensive benchmark for evaluating current detection methods. We find that sRGB pre-training constrains the potential of RAW object detection due to the domain gap between sRGB and RAW, prompting us to directly pre-train on the RAW domain. However, it is harder for RAW pre-training to learn rich representations than sRGB pre-training due to the camera noise. To assist RAW pre-training, we distill the knowledge from an off-the-shelf model pre-trained on the sRGB domain. As a result, we achieve substantial improvements under diverse and adverse conditions without relying on extra pre-processing modules.",
+        "url": "https://arxiv.org/abs/2411.15678",
+        "tags": ["Camera", "Object Detection"],
+        "homepage": "https://github.com/lzyhha/AODRaw/",
+        "published": "CVPR 2025"
+    }
+]
