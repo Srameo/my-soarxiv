@@ -134,64 +134,44 @@
     fetch('galaxy.json')
       .then(res => res.json())
       .then(data => {
-        // 并行获取 GitHub star 数
-        const starPromises = data.map(p => {
-          if (p.github_url) {
-            try {
-              const url = new URL(p.github_url);
-              const [owner, repo] = url.pathname.slice(1).split('/');
-              return fetch(`https://api.github.com/repos/${owner}/${repo}`)
-                .then(r => r.json())
-                .then(js => js.stargazers_count || 0)
-                .catch(() => 0);
-            } catch {
-              return Promise.resolve(0);
-            }
-          } else {
-            return Promise.resolve(null);
-          }
-        });
+        // 准备几何体 & 计算所有 stars 的 min/max
+        const sphereGeo = new THREE.SphereGeometry(BASE_RADIUS, 16, 16);
+        const starsArr = data.map(p => p.stars || 0);
+        const minStars = Math.min(...starsArr);
+        const maxStars = Math.max(...starsArr);
 
-        Promise.all(starPromises).then(starCounts => {
-          const validStars = starCounts.filter(s => s !== null);
-          const minStars = validStars.length ? Math.min(...validStars) : 0;
-          const maxStars = validStars.length ? Math.max(...validStars) : minStars;
-          const sphereGeo = new THREE.SphereGeometry(BASE_RADIUS, 16, 16);
-
-          data.forEach((p, i) => {
-            const isXin = p.authors[0] === 'Xin Jin';
-            const mat = new THREE.MeshStandardMaterial({
-              color:   isXin ? 0xff6622 : 0x777777,
-              emissive:isXin ? 0xffeeaa : 0xffffff,
-              emissiveIntensity: isXin ? 1.8 : 1.2,
-              roughness:0.1, metalness:0.1
-            });
-
-            const mesh = new THREE.Mesh(sphereGeo, mat);
-            // 附加 star 数到 userData
-            mesh.userData = { ...p, stars: starCounts[i] || 0 };
-
-            // 根据 star 数线性映射到 [1, 1.5]
-            let scale = 1;
-            const stars = starCounts[i];
-            if (stars !== null && maxStars > minStars) {
-              scale = 1 + ((Math.log(stars) - Math.log(minStars)) / (Math.log(maxStars) - Math.log(minStars))) * 1.0;
-            }
-            mesh.scale.set(scale, scale, scale);
-
-            mesh.position.set(...p.pos);
-            scene.add(mesh);
-            spheres.push(mesh);
+        data.forEach(p => {
+          const isXin = p.authors[0] === 'Xin Jin';
+          const mat = new THREE.MeshStandardMaterial({
+            color:   isXin ? 0xff6622 : 0x777777,
+            emissive:isXin ? 0xffeeaa : 0xffffff,
+            emissiveIntensity: isXin ? 1.8 : 1.2,
+            roughness:0.1,
+            metalness:0.1
           });
 
-          // 自动对齐相机和控制中心
-          const center = new THREE.Vector3();
-          data.forEach(p => center.add(new THREE.Vector3(...p.pos)));
-          center.divideScalar(data.length);
-          camera.position.copy(center.clone().add(new THREE.Vector3(0, 0, 6)));
-          controls.target.copy(center);
-          controls.update();
+          const mesh = new THREE.Mesh(sphereGeo, mat);
+
+          // 按 stars 映射到 [1, 1.5] 缩放
+          const stars = p.stars || 0;
+          const scale = (maxStars > minStars)
+            ? 1 + ((Math.log(stars+1) - Math.log(minStars+1)) / (Math.log(maxStars+1) - Math.log(minStars+1))) * 1.0
+            : 1;
+          mesh.scale.set(scale, scale, scale);
+
+          mesh.position.set(...p.pos);
+          mesh.userData = p;
+          scene.add(mesh);
+          spheres.push(mesh);
         });
+
+        // 自动对齐相机 & 控制中心
+        const center = new THREE.Vector3();
+        data.forEach(p => center.add(new THREE.Vector3(...p.pos)));
+        center.divideScalar(data.length);
+        camera.position.copy(center.clone().add(new THREE.Vector3(0, 0, 6)));
+        controls.target.copy(center);
+        controls.update();
       })
       .catch(err => console.error(err));
 
