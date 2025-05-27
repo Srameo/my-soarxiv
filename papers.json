@@ -41,7 +41,8 @@
         "tags": ["Underwater"],
         "homepage": "https://li-chongyi.github.io/URanker_files/",
         "published": "AAAI 2023",
-        "teaser": "<img src='/assets/paper_teaser/uranker_teaser.png' style='width: 99%; height: auto;'>"
+        "teaser": "<img src='/assets/paper_teaser/uranker_teaser.png' style='width: 99%; height: auto;'>",
+        "github_url": "https://github.com/RQ-Wu/UnderwaterRanker"
     },
     {
         "id": "jin2023dnf",
@@ -52,7 +53,8 @@
         "tags": ["Camera", "ISP"],
         "homepage": "https://github.com/Srameo/DNF",
         "published": "CVPR 2023",
-        "teaser": "<img src='/assets/paper_teaser/dnf_teaser.gif' style='width: 99%; height: auto;'>"
+        "teaser": "<img src='/assets/paper_teaser/dnf_teaser.gif' style='width: 99%; height: auto;'>",
+        "github_url": "https://github.com/Srameo/DNF"
     },
     {
         "id": "jin2023lighting",
@@ -63,7 +65,8 @@
         "tags": ["Camera", "ISP"],
         "homepage": "https://srameo.github.io/projects/led-iccv23/",
         "published": "ICCV 2023",
-        "teaser": "<img src='/assets/paper_teaser/led_teaser.png' style='width: 99%; height: auto;'>"
+        "teaser": "<img src='/assets/paper_teaser/led_teaser.png' style='width: 99%; height: auto;'>",
+        "github_url": "https://github.com/Srameo/LED"
     },
     {
         "id": "jin2023make",
@@ -85,7 +88,8 @@
         "tags": ["Camera", "3D Reconstruction", "ISP", "HDR"],
         "homepage": "https://srameo.github.io/projects/le3d/",
         "published": "NeurIPS 2024",
-        "teaser": "<img src='/assets/paper_teaser/le3d.gif' style='width: 99%; height: auto;'>"
+        "teaser": "<img src='/assets/paper_teaser/le3d.gif' style='width: 99%; height: auto;'>",
+        "github_url": "https://github.com/Srameo/LE3D"
     },
     {
         "id": "jin2025classic",
@@ -107,6 +111,7 @@
         "tags": ["Camera", "Object Detection"],
         "homepage": "https://github.com/lzyhha/AODRaw/",
         "published": "CVPR 2025",
-        "teaser": "<img src='/assets/paper_teaser/aodraw_teaser.jpg' style='width: 99%; height: auto;'>"
+        "teaser": "<img src='/assets/paper_teaser/aodraw_teaser.jpg' style='width: 99%; height: auto;'>",
+        "github_url": "https://github.com/lzyhha/AODRaw"
     }
 ]
