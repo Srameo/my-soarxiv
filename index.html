@@ -246,11 +246,27 @@
       controls.update();
 
       if (spheres.length) {
-        // 悬浮高亮 & 信息面板
+        // Determine active sphere: hovered by pointer or nearest to screen center crosshair
         raycaster.setFromCamera(pointer, camera);
         const hit = raycaster.intersectObjects(spheres)[0];
+        let activeSphere;
         if (hit) {
-          const d = hit.object.userData;
+          activeSphere = hit.object;
+        } else {
+          // find sphere closest to pointer (mouse) in NDC space
+          let minMouseDist = Infinity;
+          spheres.forEach(m => {
+            const vector = m.position.clone().project(camera);
+            const dist = Math.hypot(vector.x - pointer.x, vector.y - pointer.y);
+            if (dist < minMouseDist) {
+              minMouseDist = dist;
+              activeSphere = m;
+            }
+          });
+        }
+        if (activeSphere) {
+          // Show highlight info panel
+          const d = activeSphere.userData;
           hl.style.display = 'block';
           hl.innerHTML = `
             <b>${d.title}</b><br>
@@ -260,23 +276,17 @@
             <a href="${d.url}" target="_blank" style="color:#88caff;">Click Star to View Homepage!</a>
           `;
           highlightRing.visible = true;
-          highlightRing.position.copy(hit.object.position);
+          highlightRing.position.copy(activeSphere.position);
           highlightRing.lookAt(camera.position);
+
+          // Update region tag based on active sphere
+          const tag = activeSphere.userData.tags?.[0] || '';
+          regionTag.textContent = tag ? `Research Region: ${tag}` : '';
         } else {
           hl.style.display = 'none';
           highlightRing.visible = false;
+          regionTag.textContent = '';
         }
-
-        // 计算离相机最近的球体并更新研究领域标签
-        let nearest = null, minD = Infinity;
-        spheres.forEach(m => {
-          const d = camera.position.distanceTo(m.position);
-          if (d < minD) { minD = d; nearest = m; }
-        });
-        const tag = nearest?.userData.tags?.[0] || '';
-        regionTag.textContent = tag
-          ? `Research Region: ${tag}`
-          : '';
       }
 
       composer.render();
