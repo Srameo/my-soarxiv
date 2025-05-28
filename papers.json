@@ -8,7 +8,8 @@
         "tags": ["Diffusion", "Retouching"],
         "homepage": "https://adam-duan.github.io/projects/retouch/",
         "published": "AAAI 2024",
-        "teaser": "<img src='/assets/paper_teaser/diffretouch_teaser.png' style='width: 99%; height: auto;'>"
+        "teaser": "<img src='/assets/paper_teaser/diffretouch_teaser.png' style='width: 99%; height: auto;'>",
+        "core_contributor": false
     },
     {
         "id": "duan2025dit4sr",
@@ -19,7 +20,8 @@
         "tags": ["Diffusion", "Super-Resolution"],
         "homepage": "https://adam-duan.github.io/projects/dit4sr/",
         "published": "Arxiv Preprint",
-        "teaser": "<img src='/assets/paper_teaser/dit4sr/dit4sr.gif' style='width: 99%; height: auto;'>"
+        "teaser": "<img src='/assets/paper_teaser/dit4sr/dit4sr.gif' style='width: 99%; height: auto;'>",
+        "core_contributor": false
     },
     {
         "id": "guo2022novel",
@@ -30,7 +32,8 @@
         "tags": ["Low-light Image Enhancement"],
         "homepage": "https://srameo.github.io/bibtex/guo2022novel.html",
         "published": "ICPR 2022",
-        "teaser": "<img src='/assets/paper_teaser/icpr2023teaser.png' style='width: 99%; height: auto;'>"
+        "teaser": "<img src='/assets/paper_teaser/icpr2023teaser.png' style='width: 99%; height: auto;'>",
+        "core_contributor": false
     },
     {
         "id": "guo2023underwater",
@@ -42,7 +45,8 @@
         "homepage": "https://li-chongyi.github.io/URanker_files/",
         "published": "AAAI 2023",
         "teaser": "<img src='/assets/paper_teaser/uranker_teaser.png' style='width: 99%; height: auto;'>",
-        "github_url": "https://github.com/RQ-Wu/UnderwaterRanker"
+        "github_url": "https://github.com/RQ-Wu/UnderwaterRanker",
+        "core_contributor": false
     },
     {
         "id": "jin2023dnf",
@@ -54,7 +58,8 @@
         "homepage": "https://github.com/Srameo/DNF",
         "published": "CVPR 2023",
         "teaser": "<img src='/assets/paper_teaser/dnf_teaser.gif' style='width: 99%; height: auto;'>",
-        "github_url": "https://github.com/Srameo/DNF"
+        "github_url": "https://github.com/Srameo/DNF",
+        "core_contributor": true
     },
     {
         "id": "jin2023lighting",
@@ -66,7 +71,8 @@
         "homepage": "https://srameo.github.io/projects/led-iccv23/",
         "published": "ICCV 2023",
         "teaser": "<img src='/assets/paper_teaser/led_teaser.png' style='width: 99%; height: auto;'>",
-        "github_url": "https://github.com/Srameo/LED"
+        "github_url": "https://github.com/Srameo/LED",
+        "core_contributor": true
     },
     {
         "id": "jin2023make",
@@ -77,7 +83,8 @@
         "tags": ["Camera", "ISP"],
         "homepage": "https://srameo.github.io/projects/led-extension/",
         "published": "Arxiv Preprint",
-        "teaser": "<img src='/projects/led-extension/assets/multiraw.jpg' style='width: 99%; height: auto;'>"
+        "teaser": "<img src='/projects/led-extension/assets/multiraw.jpg' style='width: 99%; height: auto;'>",
+        "core_contributor": true
     },
     {
         "id": "jin2024le3d",
@@ -89,7 +96,8 @@
         "homepage": "https://srameo.github.io/projects/le3d/",
         "published": "NeurIPS 2024",
         "teaser": "<img src='/assets/paper_teaser/le3d.gif' style='width: 99%; height: auto;'>",
-        "github_url": "https://github.com/Srameo/LE3D"
+        "github_url": "https://github.com/Srameo/LE3D",
+        "core_contributor": true
     },
     {
         "id": "jin2025classic",
@@ -100,7 +108,8 @@
         "tags": ["Camera", "Video Denoising"],
         "homepage": "https://srameo.github.io/projects/levd/",
         "published": "CVPR 2025",
-        "teaser": "<img src='/assets/paper_teaser/levd.gif' style='width: 99%; height: auto;'>"
+        "teaser": "<img src='/assets/paper_teaser/levd.gif' style='width: 99%; height: auto;'>",
+        "core_contributor": true
     },
     {
         "id": "li2024towards",
@@ -112,6 +121,7 @@
         "homepage": "https://github.com/lzyhha/AODRaw/",
         "published": "CVPR 2025",
         "teaser": "<img src='/assets/paper_teaser/aodraw_teaser.jpg' style='width: 99%; height: auto;'>",
-        "github_url": "https://github.com/lzyhha/AODRaw"
+        "github_url": "https://github.com/lzyhha/AODRaw",
+        "core_contributor": false
     }
 ]
